@@ -12,6 +12,12 @@ body {
     align-items: center;
     background-color: darkorchid;
 }
+body.correct {
+    background color: green;;
+  }
+  body.wrong {
+    background-color: red;
+  }
 .container {
     width: 800px;
     max-width: 80%;

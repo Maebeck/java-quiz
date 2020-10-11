@@ -3,11 +3,16 @@ var submitBtn = document.getElementById('submit-btn');
 var questionContainer = document.getElementById('question-container');
 var questionEl =document.getElementById('question');
 var answerBtnEl = document.getElementById('answer-buttons');
-var count = 60;
-var score = 0;
+var correctAnswer = document.getElementById('correct-answer');
+var minutesDisplay = document.querySelector("#minutes");
+var secondsDisplay = document.querySelector("#seconds");
+var finishBtn = document.getElementById('finish-btn');
+var timer = 120;
+var score = -1;
+var timeRemaining;
 let shuffledQuestions, currentQuestionIndex
 
-startBtn.addEventListener('click', startQuiz)
+startBtn.addEventListener('click', startQuiz, startTimer)
 submitBtn.addEventListener('click', () =>{
     currentQuestionIndex++
     setNextQuestion()
@@ -33,13 +38,15 @@ question.answer.forEach(answer => {
     button.classList.add('btn')
     if (answer.correct) {
         button.dataset.correct = answer.correct
+    } else {
+        timer ---10;
     }
     button.addEventListener('click', selectAnswer)
     answerBtnEl.appendChild(button)
 })
 }
 function resetState () {
-    submitBtn.classList.add('Hide')
+    submitBtn.classList.add('hide')
     while (answerBtnEl.firstChild) {
         answerBtnEl.removeChild
         (answerBtnEl.firstChild)
@@ -48,9 +55,14 @@ function resetState () {
 function selectAnswer(e){
 var selectedBtn = e.target
 var correct = selectedBtn.dataset.correct
-if (shuffledQuestions.length > currentQuestionIndex + 1)
+if (shuffledQuestions.length > currentQuestionIndex + 1){
 submitBtn.classList.remove('hide')
+} else {
+    finishBtn.classList.remove('hide')
+    finishBtn.addEventListener('click', finishQuiz)
 }
+}
+
 function setStatusClass(element, correct) {
     clearStatusClass(element)
     if (correct) {
@@ -65,7 +77,14 @@ function setStatusClass(element, correct) {
     element.classList.remove('wrong')
   }
 
+  function finishQuiz (){
 
+    
+  }
+
+function hsCounter(){
+    
+}
 
 var questions= 
     [{
@@ -102,3 +121,9 @@ var questions=
         ]
         },
 ];
+
+function startTimer(){
+    timer.getElementById('timer');
+    timer.textContent = "Time remaining:" + timeRemaining;
+
+}
