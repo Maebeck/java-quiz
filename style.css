@@ -1,6 +1,5 @@
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 body {
@@ -11,6 +10,7 @@ body {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    background-color: darkorchid;
 }
 .container {
     width: 800px;
@@ -30,9 +30,39 @@ body {
 
 .btn {
     background-color: forestgreen;
+    border: solid;
+    font-size: 25px;
+}
+
+.btn:hover {
+    background-color: lightgreen;
 }
 
 .question {
 text-align: center;
+font-weight: bold;
+font-size: 30px;
 
+}
+.btn.correct {
+    background-color: green;
+    color: black;
+  }
+.btn.wrong {
+    background-color: red;
+  }
+  
+
+.submit-btn, .start-btn {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hide {
+    display: none;
 }
