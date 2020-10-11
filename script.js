@@ -54,7 +54,7 @@ function resetState () {
 }
 function selectAnswer(e){
 var selectedBtn = e.target
-var correct = selectedBtn.dataset.correct
+correctanswer = selectedBtn.dataset.correct
 if (shuffledQuestions.length > currentQuestionIndex + 1){
 submitBtn.classList.remove('hide')
 } else {
@@ -123,7 +123,15 @@ var questions=
 ];
 
 function startTimer(){
+    
     timer.getElementById('timer');
     timer.textContent = "Time remaining:" + timeRemaining;
-
+    updateTimer();
+}
+function updateTimer(){
+    if (correctAnswer = true){
+} else {
+    timeRemaining = timer - 10;
+    console.log(timeRemaining);
+}   
 }
