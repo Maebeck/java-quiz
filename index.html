@@ -7,40 +7,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="script.js">
+    
     <title>JavaScript mini-quiz!</title>
 </head>
 
 <body>
-    <div class="head">
-        <h1>High Score <span>Your Score:</span></h1>
+  <div class = "container">
+    <div id = "question-container" class = "hide">
+     <div id = "question">Question</div> 
+     <div id ="answer-buttons" class="btn-grid">
+        <button class ="btn">Answer 1</button>
+        <button class ="btn">Answer 2</button>
+        <button class ="btn">Answer 3</button>
+        <button class ="btn">Answer 4</button> 
     </div>
-
-    <h1 id="question">
-
-    </h1>
-    <div id="quiz">
-        <h2 id = "question">QUESTION HERE</h2>
-    </div>
-    <ul id = "answers" style="list-style-type: none;">
-        <li>
-            <button id="optionOne button">
-                Test 1
-            </button>
-        </li>
-        <li>
-            <button id="optionTwo button"> Test 1</button>
-        </li>
-        <li>
-            <button id="optionThree button"> Test 3</button>
-        </li>
-        <li>
-            <button id="optionFour button"> Test 4</button>
-        </li>
-    </ul>
-
-
-
+  </div>
+  <div class = "controls">
+    <button id = "submit-btn" class = "submit-btn btn hide">Submit</button>
+  </div>
+  </div>
 </body>
-
+<script src="script.js"></script>
 </html>
